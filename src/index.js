@@ -1,17 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { createStore, compose, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import './index.css'
+import { rootReducer } from './redux/reducer'
+import App from './app'
+
+const initialState = {
+  filterAll: true,
+  filterWithout: true,
+  filter1Transfer: true,
+  filter2Transfers: true,
+  filter3Transfers: true,
+  ticketsAll: [],
+  ticketsWithout: [],
+  tickets1Transfer: [],
+  tickets2Transfers: [],
+  tickets3Transfers: [],
+  ticketsCount: 5,
+  activeTab: null,
+}
+
+/* eslint-disable no-underscore-dangle */
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+    : compose
+
+const enhancer = composeEnhancers(applyMiddleware(thunk))
+export const store = createStore(rootReducer, initialState, enhancer)
+/* eslint-enable */
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </Provider>
+)

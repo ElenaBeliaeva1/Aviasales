@@ -1,0 +1,32 @@
+.tickets-list {
+    display: flex;
+    flex-direction: column;
+}
+.btn-more {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(33, 150, 243, 1);
+    color: rgba(255, 255, 255, 1);
+    width: 502px;
+    height: auto;
+    max-height: 50px;
+    margin-left: 20px;
+}
+
+.btn-more:active{
+    color: rgba(74, 74, 74, 1);
+    background-color: rgba(255, 255, 255, 1); 
+}
+
+.loader{
+    margin: 50px auto 50px auto;
+}
+
+.message{
+    padding: 20px, 0, 20px, 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}

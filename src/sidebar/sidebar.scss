@@ -1,0 +1,85 @@
+.sidebar{
+    height: 400px;
+    width: 232px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: -2px 3px 10px 0px rgba(0,0,0,0.2);
+    margin-left: 103px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgba(74, 74, 74, 1);
+    grid-area: 'sidebar';
+    font-size: 12px;
+}
+
+.sidebar div{
+    padding: 20px 0 10px 20px;
+}
+.filter {
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.filter:hover, .toggle:hover, label:hover{
+    background-color: rgba(241, 252, 255, 1);
+    cursor: pointer;
+}
+
+.toggle {
+    text-align: center;
+    width: 40px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    border: none;
+    appearance: none;
+    opacity: 0;
+}
+
+.toggle{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.toggle+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+.toggle+label::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: none;
+    background-image: url(./toggle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+.toggle:checked+label::before {
+    background-image: url(./toggle-checked.svg);
+}
+
+.toggle:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+}
+
+.toggle:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.toggle:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+}
+
+.toggle:disabled+label::before {
+    background-color: #e9ecef;
+}

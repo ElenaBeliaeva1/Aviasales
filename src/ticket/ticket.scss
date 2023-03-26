@@ -1,0 +1,33 @@
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: white;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.price {
+    font-size: 24px;
+    color: rgba(33, 150, 243, 1);
+    margin-left: 10px;
+}
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin-left: 20px;
+}
+
+.info--place, .inWay, .transfer-count {
+    font-size: 12px;
+    color: rgba(160, 176, 185, 1);
+}

@@ -1,0 +1,38 @@
+.tabs-container{
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    grid-area: 'tabs';
+}
+
+.tab{
+    height: 50px;
+    width: 168px;
+    background-color: #FFFFFF;
+    color: rgba(74, 74, 74, 1);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab:hover{
+    cursor: pointer;
+}
+
+.active{
+    background-color: rgba(33, 150, 243, 1);
+    color:rgba(255, 255, 255, 1)
+}
+
+.tab-cheaper{
+    border-radius: 5px 0 0 5px;
+}
+
+.tab-optimal{
+    border-radius: 0 5px 5px 0;
+}
